@@ -25,18 +25,22 @@ from datetime import datetime
 
 year = datetime.today().year
 month = datetime.today().month
+options = sys.argv
 
-if len(sys.argv) < 2:
+if len(options) < 2:
     calendar.prmonth(year, month, w=3, l=1)
-elif len(sys.argv) < 3:
-    if int(sys.argv[1]) > 12 or int(sys.argv[1]) < 1:
+elif len(options) < 3:
+    if int(options[1]) > 12 or int(options[1]) < 1:
         print('Please enter a valid month from 1 - 12')
     else:
-        calendar.prmonth(year, int(sys.argv[1]), w=3, l=1)
-elif len(sys.argv) < 4:
-    if int(sys.argv[1]) > 12 or int(sys.argv[1]) < 1:
+        month = int(options[1])
+        calendar.prmonth(year, month, w=3, l=1)
+elif len(options) < 4:
+    if int(options[1]) > 12 or int(options[1]) < 1:
         print('Please enter a valid month from 1 - 12')
     else:
-        calendar.prmonth(int(sys.argv[2]), int(sys.argv[1]), w=3, l=1)
+        year = int(options[2])
+        month = int(options[1])
+        calendar.prmonth(year, month, w=3, l=1)
 else:
     print('Please pass the year and date you\'d like to see. Ex. 14_cal.py 5 2019')
