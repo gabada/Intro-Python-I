@@ -22,7 +22,7 @@ print([x ** 3 for x in range(10)])
 
 a = ["foo", "bar", "baz"]
 
-print([x.capitalize() for x in a])
+print([x.upper() for x in a])
 
 # Use a list comprehension to create a list containing only the _even_ elements
 # the user entered into list x.
