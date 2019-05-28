@@ -40,4 +40,3 @@ elif len(sys.argv) < 4:
         calendar.prmonth(int(sys.argv[2]), int(sys.argv[1]), w=3, l=1)
 else:
     print('Please pass the year and date you\'d like to see. Ex. 14_cal.py 5 2019')
-
